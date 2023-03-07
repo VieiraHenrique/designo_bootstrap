@@ -1,0 +1,42 @@
+/* BREAKPOINTS */
+
+// BREAKPOINTS
+
+@mixin sm() {
+  @media screen and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin md() {
+  @media screen and (min-width: $md) {
+    @content;
+  }
+}
+@mixin lg() {
+  @media screen and (min-width: $lg) {
+    @content;
+  }
+}
+@mixin xl() {
+  @media screen and (min-width: $xl) {
+    @content;
+  }
+}
+@mixin xxl() {
+  @media screen and (min-width: $xxl) {
+    @content;
+  }
+}
+
+/* UTILITIES */
+
+@mixin pseudo($display: block, $position: absolute) {
+  content: "";
+  display: $display;
+  position: $position;
+}
+
+@mixin transition($time: 0.4s, $interpolation: ease) {
+  transition: $time $interpolation;
+}

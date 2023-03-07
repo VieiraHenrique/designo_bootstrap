@@ -1,0 +1,25 @@
+.iw-header {
+  .logo {
+    max-width: 195px;
+    @include transition;
+    &-mobile {
+      max-width: 120px;
+    }
+  }
+  .nav-link {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
+
+.small-menu {
+  @include transition;
+  box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.3);
+  .container {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+  .logo {
+    max-width: 120px;
+  }
+}

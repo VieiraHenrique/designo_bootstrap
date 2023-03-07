@@ -1,0 +1,275 @@
+// PUT COMMENT OF WORDPRESS THEME HERE
+
+// FONT FAMILY
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+$font-family-base: "Jost", sans-serif;
+
+// TYPO
+
+$font-size-base: 1rem; // 16px
+$lead-font-size: $font-size-base * 1.25; // 20px
+
+$line-height-base: 1;
+
+$paragraph-margin-bottom: 0;
+
+// DISPLAY SIZES
+// Must be declared in rem.
+// For easy conversion: https://nekocalc.com/px-to-rem-converter
+// Can add more displays (7, 8, etc...)
+// I use only display classes for different font sizes
+
+$display-font-sizes: (
+  1: 3rem,
+  // 48px
+  2: 2.5rem,
+  // 40px
+  3: 1.25rem,
+  // 20px
+  4: 0.938rem,
+  // 15px
+  5: 0.875rem,
+  // 14px
+);
+
+$display-font-weight: 400;
+$display-line-height: 1.1;
+
+// FONT WEIGHTS
+
+$font-weight-lighter: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
+
+// BASE COLORS
+
+// Define black and white values
+$white: #fff;
+$black: #1d1c1e;
+
+// Create variables with colors and pass them into the theme colors
+$peach: #e7816b;
+$light-peach: #ffad9b;
+
+$theme-colors: (
+  "peach": $peach,
+  "light-peach": $light-peach,
+  "gray-light": #ccc,
+  "gray-dark": #333,
+);
+
+$body-bg: $white;
+$body-color: $black;
+
+// LINKS
+
+$link-color: $black;
+$link-hover-color: $black;
+$link-decoration: none;
+$link-hover-decoration: none;
+
+// NAV-LINKS
+
+$nav-link-color: $black;
+$nav-link-hover-color: $peach;
+$nav-link-font-size: 14px;
+$nav-link-font-weight: 400;
+
+// DEFINES THE PADDING BETWEEN NAV LINKS
+$wi-nav-link-padding: 44px;
+$wi-nav-link-padding-mobile: 20px;
+
+.navbar-nav {
+  gap: $wi-nav-link-padding;
+}
+
+.offcanvas {
+  border: none !important;
+  .navbar-nav {
+    gap: $wi-nav-link-padding-mobile;
+  }
+}
+
+// Dont't touch this
+$navbar-nav-link-padding-x: 0;
+$navbar-light-color: $nav-link-color;
+$navbar-light-hover-color: $nav-link-hover-color;
+//
+
+// GRID AND CONTAINER
+
+$sm: 576px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1440px;
+$xxl: 1920px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  xxl: $xxl,
+);
+
+$grid-columns: 12;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1110px,
+  xxl: 1111px,
+);
+
+// SPACING
+$spacer: 10px;
+
+$spacers: (
+  0: 0,
+  1: $spacer,
+  2: $spacer * 2,
+  3: $spacer * 3,
+  4: $spacer * 4,
+  5: $spacer * 5,
+  6: $spacer * 6,
+  7: $spacer * 7,
+  8: $spacer * 8,
+  9: $spacer * 9,
+  10: $spacer * 10,
+  11: $spacer * 11,
+  12: $spacer * 12,
+  13: $spacer * 13,
+  14: $spacer * 14,
+  15: $spacer * 15,
+);
+
+// LINE HEIGHT
+
+.lh-1 {
+  line-height: 1;
+}
+
+.lh-12 {
+  line-height: 1.2;
+}
+
+.lh-14 {
+  line-height: 1.4;
+}
+
+.lh-16 {
+  line-height: 1.6;
+}
+
+.lh-18 {
+  line-height: 1.8;
+}
+
+.lh-2 {
+  line-height: 2;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "./mixins/mixins";
+
+.menu-spacer {
+  margin-top: 122px;
+}
+
+.navbar {
+  z-index: 1030;
+}
+
+// FROM HERE : SPECIFIC CLASSES FOR THE PROJECT
+
+.iw-btn {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: white;
+  text-transform: uppercase;
+  padding: 20px 30px;
+  font-weight: 500;
+}
+
+@import "./partials/header";
+@import "./partials/hero";
+
+.wi-card-a {
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  color: $white;
+  position: relative;
+  overflow: hidden;
+  background-blend-mode: overlay;
+  background-color: #5c5c5c;
+  background-size: cover;
+
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    &::after {
+      @include pseudo;
+      width: 5px;
+      height: 8px;
+      background: url("../images/arrow-right.png");
+      background-size: contain;
+      top: 50%;
+      right: -20px;
+      transform: translateY(-50%);
+      @include transition;
+    }
+
+    &:hover {
+      &::after {
+        right: -25px;
+      }
+    }
+  }
+}
+
+.h-640 {
+  min-height: 200px;
+  @include lg {
+    min-height: 640px;
+  }
+}
+
+.h-50 {
+  height: 50%;
+  min-height: 200px;
+}
+
+.wi-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.wi-card-b {
+  text-align: center;
+  .display-3 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 500;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+}
