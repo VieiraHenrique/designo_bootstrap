@@ -85,7 +85,28 @@
 }
 
 .footer {
-  @include lg {
+  background-color: $black;
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    flex-direction: column;
+    @include sm {
+      flex-direction: row;
+    }
+
+    @include md {
+      justify-content: flex-end;
+    }
+    a {
+      color: $white;
+      text-transform: uppercase;
+    }
+  }
+  padding-top: 50px;
+  @include md {
     margin-top: -60px;
     padding-top: 120px;
   }

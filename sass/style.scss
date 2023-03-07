@@ -153,27 +153,27 @@ $spacers: (
 // LINE HEIGHT
 
 .lh-1 {
-  line-height: 1;
+  line-height: 1 !important;
 }
 
 .lh-12 {
-  line-height: 1.2;
+  line-height: 1.2 !important;
 }
 
 .lh-14 {
-  line-height: 1.4;
+  line-height: 1.4 !important;
 }
 
 .lh-16 {
-  line-height: 1.6;
+  line-height: 1.6 !important;
 }
 
 .lh-18 {
-  line-height: 1.8;
+  line-height: 1.8 !important;
 }
 
 .lh-2 {
-  line-height: 2;
+  line-height: 2 !important;
 }
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
@@ -265,6 +265,15 @@ $spacers: (
 
 .wi-card-b {
   text-align: center;
+  @include md {
+    text-align: left;
+    display: flex;
+    gap: 20px;
+  }
+  @include lg {
+    text-align: center;
+    display: block;
+  }
   .display-3 {
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -274,4 +283,8 @@ $spacers: (
   p {
     line-height: 1.8;
   }
+}
+
+.nav-link {
+  letter-spacing: 2px;
 }
