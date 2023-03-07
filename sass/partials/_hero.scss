@@ -1,7 +1,7 @@
 .hero {
   overflow: hidden;
 
-  background-image: url("./images/hero_oval.png");
+  background-image: url("../images/hero_oval.png");
   background-repeat: no-repeat;
   background-position: right center;
   background-size: 100%;
@@ -52,7 +52,7 @@
 
 .pre-footer {
   background-color: $peach;
-  background-image: url("./images/hero_oval.png");
+  background-image: url("../images/hero_oval.png");
   background-size: 300px;
   background-position: right top -150px;
   position: relative;
@@ -85,6 +85,8 @@
 }
 
 .footer {
-  margin-top: -60px;
-  padding-top: 120px;
+  @include lg {
+    margin-top: -60px;
+    padding-top: 120px;
+  }
 }
